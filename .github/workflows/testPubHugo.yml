@@ -73,6 +73,15 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Cache publications
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-pubs-${{ env.HUGO_VERSION }}
+        with:
+          path: publications
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}          
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
