@@ -1,20 +1,16 @@
 name: publications
 
-env:
-  HUGO_VERSION: "0.79.1"
-
 on:
   workflow_dispatch:
   #schedule:
   #  - cron:  '30 17 * * 0'
 
 jobs:
-    runs-on: self-hosted
+  generate-publications:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
 
       - name: Check out
         uses: actions/checkout@v2
