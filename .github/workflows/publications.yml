@@ -18,6 +18,11 @@ jobs:
         with:
           fetch-depth: 0
 
+
+      - name: Install pipenv
+        run: |
+            which python3
+
       - name: Install pipenv
         run: |
            python -m pip install --upgrade pip
