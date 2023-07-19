@@ -1,8 +1,5 @@
 name: website build
 
-#env:
-#  HUGO_VERSION: "0.79.1"
-
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
